@@ -1,0 +1,53 @@
+<md-dialog aria-label="Login">
+
+    <form name="accessForm" data-ng-submit="AccessDialogCtrl.access()">
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2 data-ng-if="AccessDialogCtrl.isLogin">Login</h2>
+                <h2 data-ng-if="!AccessDialogCtrl.isLogin">Sign Up</h2>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+            <div class="md-dialog-content">
+                <md-input-container class="md-block"
+                                    data-ng-if="!AccessDialogCtrl.isLogin">
+                    <label>Name</label>
+                    <input ng-model="AccessDialogCtrl.user.name" required>
+                </md-input-container>
+
+                <md-input-container class="md-block">
+                    <label>Email</label>
+                    <input ng-model="AccessDialogCtrl.user.email" required>
+                </md-input-container>
+
+                <md-input-container class="md-block">
+                    <label>Password</label>
+                    <input ng-model="AccessDialogCtrl.user.password" type="password" required>
+                </md-input-container>
+            </div>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+            <span flex></span>
+            <md-button type="submit"
+                       class="md-primary"
+                       data-ng-if="AccessDialogCtrl.isLogin"
+                       aria-label="Log In">
+                Log In
+            </md-button>
+            <md-button type="submit"
+                       class="md-primary"
+                       data-ng-if="!AccessDialogCtrl.isLogin"
+                       aria-label="Sign Up">
+                Sign Up
+            </md-button>
+            <md-button type="button"
+                       ng-click="AccessDialogCtrl.cancel()"
+                       aria-label="Cancel">
+                Cancel
+            </md-button>
+        </md-dialog-actions>
+    </form>
+
+</md-dialog>

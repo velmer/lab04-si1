@@ -1,0 +1,35 @@
+<md-toolbar>
+    <md-toolbar-row layout="row" layout-padding>
+        <span class="md-headline">NETFRIX</span>
+        <md-button class="toolbar-button"
+                   data-ng-if="isUserLogged()"
+                   ui-sref="home">Home</md-button>
+        <md-button class="toolbar-button"
+                   data-ng-if="isUserLogged()"
+                   ui-sref="profile">Profile</md-button>
+        <md-button class="toolbar-button"
+                   data-ng-if="isUserLogged()"
+                   ui-sref="watchlist">Watchlist</md-button>
+
+        <span flex></span>
+
+        <md-button class="toolbar-button"
+                   aria-label="Logout"
+                   data-ng-if="isUserLogged()"
+                   data-ng-click="logout()">
+            Logout
+        </md-button>
+        <md-button class="toolbar-button"
+                   aria-label="Login"
+                   data-ng-if="!isUserLogged()"
+                   data-ng-click="showLoginDialog()">
+            Login
+        </md-button>
+        <md-button class="toolbar-button"
+                   aria-label="Sign Up"
+                   data-ng-if="!isUserLogged()"
+                   data-ng-click="showSignUpDialog()">
+            Sign Up
+        </md-button>
+    </md-toolbar-row>
+</md-toolbar>

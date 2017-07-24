@@ -1,0 +1,114 @@
+<md-dialog aria-label="Series Details" layout="row" layout-align="center center">
+    <div layout="row">
+        <!-- Poster -->
+        <img class="poster-image"
+             data-ng-if="SeriesDialogCtrl.hasAttr('poster')"
+             data-ng-src="{{SeriesDialogCtrl.originalSeries.poster}}"
+             data-md-plain-image>
+        <!-- end Poster -->
+        <div layout="column">
+            <!-- Content -->
+            <md-dialog-content layout-padding layout="column" layout-align="start center">
+                <!-- Title and Subtitle -->
+                <div layout="row" layout-padding>
+                    <span class="md-headline text-center" data-ng-bind="SeriesDialogCtrl.getSeriesTitle()"></span>
+                    <span class="md-headline text-center" data-ng-bind="SeriesDialogCtrl.getSeriesYear()"></span>
+                </div>
+                <!-- end Title and Subtitle -->
+
+                <!--Series' Information-->
+                <div layout="row" layout-align="start">
+                    <div data-layout-padding layout="column">
+                        <span class="md-subhead series-dialog-sinopse"
+                              data-ng-if="SeriesDialogCtrl.hasAttr('plot')"
+                              layout-padding>{{SeriesDialogCtrl.originalSeries.plot}}</span>
+
+                        <md-card-title-text layout="row" layout-align="start">
+                            <div layout="column" class="series-dialog-plot">
+                                <span data-ng-if="SeriesDialogCtrl.hasAttr('director')">Director: {{SeriesDialogCtrl.originalSeries.director}}</span>
+                                <span data-ng-if="SeriesDialogCtrl.hasAttr('writer')">Writer: {{SeriesDialogCtrl.originalSeries.writer}}</span>
+                                <span data-ng-if="SeriesDialogCtrl.hasAttr('rated')">Rated: {{SeriesDialogCtrl.originalSeries.rated}}</span>
+                                <span data-ng-if="SeriesDialogCtrl.hasAttr('imdbRating')">IMDb Rating: {{SeriesDialogCtrl.originalSeries.imdbRating}}</span>
+                            </div>
+                            <div layout="column" class="series-dialog-plot" style="padding-left: 10px">
+                                <span data-ng-if="SeriesDialogCtrl.hasAttr('actors')">Cast: {{SeriesDialogCtrl.originalSeries.actors}}</span>
+                                <span data-ng-if="SeriesDialogCtrl.hasAttr('genre')">Genre: {{SeriesDialogCtrl.originalSeries.genre}}</span>
+                                <span data-ng-if="SeriesDialogCtrl.hasAttr('language')">Language: {{SeriesDialogCtrl.originalSeries.language}}</span>
+                            </div>
+                        </md-card-title-text>
+                    </div>
+                </div>
+                <!--End Series' Information-->
+
+                <!--Forms-->
+                <div data-ng-if="SeriesDialogCtrl.isProfileView">
+                    <form name="seriesUserOpinion"
+                          class="formSeriesDialog"
+                          layout="column"
+                          data-ng-submit="SeriesDialogCtrl.save()">
+                        <div layout="row">
+                            <md-input-container class="series-input-container">
+                                <input placeholder="Season" type="number"
+                                       name="Season"
+                                       min="1"
+                                       ng-disabled="!SeriesDialogCtrl.isEdition"
+                                       ng-model="SeriesDialogCtrl.editableSeries.season"/>
+                                <div ng-messages="seriesUserOpinion.Season.$error" multiple>
+                                    <div ng-message="min">
+                                        Season should be equals or more than 1.
+                                    </div>
+                                </div>
+                            </md-input-container>
+                            <md-input-container class="series-input-container">
+                                <input placeholder="Last Episode" type="number"
+                                       name="LastEpisode"
+                                       min="1"
+                                       ng-disabled="!SeriesDialogCtrl.isEdition"
+                                       ng-model="SeriesDialogCtrl.editableSeries.lastEpisode"/>
+                                <div ng-messages="seriesUserOpinion.LastEpisode.$error" multiple>
+                                    <div ng-message="min">
+                                        Last episode should be equals or more than 1.
+                                    </div>
+                                </div>
+                            </md-input-container>
+                            <md-input-container class="series-input-container">
+                                <input id="rating-input" placeholder="Rate" type="number"
+                                       name="Rating"
+                                       min="0" max="10"
+                                       ng-disabled="!SeriesDialogCtrl.isEdition"
+                                       ng-model="SeriesDialogCtrl.editableSeries.rating"/>
+                                <div ng-messages="seriesUserOpinion.Rating.$error" multiple>
+                                    <div ng-message="min">
+                                        You should rate equals or more than 0.
+                                    </div>
+                                    <div ng-message="max">
+                                        You should rate equals or less than 10.
+                                    </div>
+                                </div>
+                            </md-input-container>
+                        </div>
+
+                        <div layout="row" layout-align="center center">
+                            <md-button ng-if="!SeriesDialogCtrl.isEdition"
+                                       ng-click="SeriesDialogCtrl.toggleEdit()">
+                                Edit
+                            </md-button>
+                            <md-button class="md-primary"
+                                       ng-if="SeriesDialogCtrl.isEdition"
+                                       type="submit">
+                                Save
+                            </md-button>
+                            <md-button class="md-warn"
+                                       ng-if="SeriesDialogCtrl.isEdition"
+                                       ng-click="SeriesDialogCtrl.discardChanges()">
+                                Discard
+                            </md-button>
+                        </div>
+                    </form>
+                </div>
+                <!--End forms-->
+            </md-dialog-content>
+        </div>
+        <!-- end Content -->
+    </div>
+</md-dialog>

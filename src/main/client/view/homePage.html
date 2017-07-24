@@ -1,0 +1,45 @@
+<!--Search bar-->
+<md-content layout-padding>
+    <form style="margin:0;" data-ng-submit="homePageCtrl.search(searchText)">
+        <div class="md-toolbar-tools search-bar" layout-align="center">
+
+            <md-input-container flex>
+                <input placeholder="Search for series" data-ng-model="searchText"/>
+            </md-input-container>
+
+            <md-button class="md-icon-button"
+                       ng-disabled="searchText === undefined ||
+                                    searchText.length === 0"
+                       layout-align="center"
+                       type="submit"
+                       aria-label="Search">
+                <md-icon layout layout-align="center">search</md-icon>
+            </md-button>
+        </div>
+    </form>
+</md-content>
+<!--End search bar-->
+
+<!--List of series-->
+<md-content layout="column">
+    <md-content style="margin-left: 20px;">
+        <md-subheader class="md-no-sticky"
+                      data-ng-if="homePageCtrl.isSearchResult
+                                && homePageCtrl.getSeriesList().length > 0">
+            Search result
+        </md-subheader>
+        <md-subheader class="md-no-sticky"
+                      data-ng-if="!homePageCtrl.isSearchResult
+                                && homePageCtrl.getSeriesList().length > 0">
+            My series
+        </md-subheader>
+    </md-content>
+    <md-list layout="row">
+        <md-list-item data-ng-repeat="series in homePageCtrl.getSeriesList()">
+            <series-card data-series="series"
+                         data-is-profile-view="!homePageCtrl.isSearchResult"
+                         data-is-search-result="homePageCtrl.isSearchResult"></series-card>
+        </md-list-item>
+    </md-list>
+</md-content>
+<!--End list of series-->

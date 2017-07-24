@@ -1,0 +1,30 @@
+<md-card layout="column" class="series-card">
+    <div class="parent">
+        <img class="md-card-image"
+             data-ng-click="showSeriesDetails($event)"
+             data-ng-src="{{getSeriesPoster()}}"
+             data-md-plain-image>
+    </div>
+    <md-card-header class="card-title" layout-align="center center">
+        <md-card-header-text class="md-subhead" align="center">
+            {{series.title}}
+        </md-card-header-text>
+    </md-card-header>
+    <md-card-actions layout="column" layout-align="space-around none">
+        <md-button class="md-raised md-primary"
+                   ng-if="isSearchResult || !isOnProfileSeries()"
+                   ng-click="addSeriesToProfile()">
+            Add to profile
+        </md-button>
+        <md-button class="md-raised md-primary"
+                   ng-if="isSearchResult || (!isOnWatchlistSeries() && !isOnProfileSeries())"
+                   ng-click="addSeriesToWatchlist()">
+            Add to watchlist
+        </md-button>
+        <md-button class="md-raised md-warn"
+                   ng-if="!isSearchResult && isOnProfileSeries()"
+                   ng-click="removeSeriesFromProfile()">
+            Remove
+        </md-button>
+    </md-card-actions>
+</md-card>

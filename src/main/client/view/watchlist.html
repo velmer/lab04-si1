@@ -1,0 +1,17 @@
+<!--List of series-->
+<md-content data-ng-if="watchlistCtrl.hasSeries()">
+    <md-list layout="row">
+        <md-list-item data-ng-repeat="series in watchlistCtrl.getWatchlistSeries()">
+            <series-card data-series="series"></series-card>
+        </md-list-item>
+    </md-list>
+</md-content>
+<!--End list of series-->
+
+<md-content data-ng-if="!watchlistCtrl.hasSeries()"
+            layout="row"
+            data-layout-align="center center"
+            data-layout-padding
+            flex>
+    <span class="md-display-1">There are no series on your watchlist.</span>
+</md-content>

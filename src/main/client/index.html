@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+    <title>Netfrix</title>
+
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.4/angular-material.min.css"/>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body ng-app="lab04si1-si1">
+    <toolbar></toolbar>
+    <div ui-view></div>
+
+    <!--Angular-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-animate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-aria.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.4/angular-material.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-messages/1.6.4/angular-messages.min.js"></script>
+
+    <!--Config-->
+    <script type="text/javascript" src="js/config.js"></script>
+
+    <!--Controllers-->
+    <script type="text/javascript" src="js/controller/HomePageController.js"></script>
+    <script type="text/javascript" src="js/controller/ProfileController.js"></script>
+    <script type="text/javascript" src="js/controller/WatchlistController.js"></script>
+    <script type="text/javascript" src="js/controller/dialog/SeriesDialogController.js"></script>
+    <script type="text/javascript" src="js/controller/dialog/AccessDialogController.js"></script>
+
+    <!--Services-->
+    <script type="text/javascript" src="js/service/OMDaAPIService.js"></script>
+    <script type="text/javascript" src="js/service/UserService.js"></script>
+    <script type="text/javascript" src="js/service/SeriesService.js"></script>
+    <script type="text/javascript" src="js/service/DialogService.js"></script>
+    <script type="text/javascript" src="js/service/ToastService.js"></script>
+
+    <!--Factories-->
+    <script type="text/javascript" src="js/factory/Series.js"></script>
+    <script type="text/javascript" src="js/factory/User.js"></script>
+
+    <!--Directives-->
+    <script type="text/javascript" src="js/directive/SeriesCardDirective.js"></script>
+    <script type="text/javascript" src="js/directive/ToolbarDirective.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+.toolbar-button {
+    text-align: center;
+    height: 50px;
+    width: 100px;
+    margin: 0;
+}
+
+.md-toolbar {
+    height: 50px;
+}
+
+.series-card {
+    max-width: 160px;
+    height: 390px;
+}
+
+.card-title {
+    padding: 5px;
+    max-width: 150px;
+    height: 60px;
+}
+
+.parent {
+    height: 230px;
+    width: 160px;
+}
+
+.md-card-image {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+.series-dialog-sinopse {
+    max-width: 600px;
+}
+
+.series-dialog-plot {
+    max-width: 460px;
+}
+
+.md-raised {
+    font-size: small;
+}
+
+.md-list-item-inner {
+    width: inherit !important;
+}
+
+.series-input-container {
+    max-width: 180px;
+    margin: 10px;
+}
+
+.formSeriesDialog {
+    margin: 0;
+}
+
+md-list-item {
+    max-width: 176px;
+}

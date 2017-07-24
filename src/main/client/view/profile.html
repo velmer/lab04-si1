@@ -1,0 +1,18 @@
+<!--List of series-->
+<md-content data-ng-if="profileCtrl.hasSeries()">
+    <md-list layout="row">
+        <md-list-item data-ng-repeat="series in profileCtrl.getProfileSeries()">
+            <series-card data-series="series"
+                         data-is-profile-view="true"></series-card>
+        </md-list-item>
+    </md-list>
+</md-content>
+<!--End list of series-->
+
+<md-content data-ng-if="!profileCtrl.hasSeries()"
+            layout="row"
+            data-layout-align="center center"
+            data-layout-padding
+            flex>
+    <span class="md-display-1">There are no series on your profile.</span>
+</md-content>
