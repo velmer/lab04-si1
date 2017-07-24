@@ -1,8 +1,7 @@
 package lab04si1.model;
 
-import com.sun.istack.internal.NotNull;
-
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 /**
  * Entity to represent a series.
