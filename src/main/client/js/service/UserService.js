@@ -4,7 +4,7 @@
     app.service('UserService', function (User, $http) {
         const self = this;
 
-        const BASE_URI_ENDPOINT = 'http://localhost:8080/users',
+        const BASE_URI_ENDPOINT = '/users',
               LOGIN_ENDPOINT = BASE_URI_ENDPOINT + '/login',
               SIGNU_UP_ENDPOINT = BASE_URI_ENDPOINT + '/register';
 

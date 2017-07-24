@@ -3,7 +3,7 @@
 
     app.factory('User', function (SeriesService, $http, $q) {
 
-        const BASE_URI_ENDPOINT = 'http://localhost:8080/users',
+        const BASE_URI_ENDPOINT = '/users',
               PROFILE_SERIES_ENDPOINT = BASE_URI_ENDPOINT + '/profile',
               WATCHLIST_SERIES_ENDPOINT = BASE_URI_ENDPOINT + '/watchlist',
               ADD_ENDPOINT = '/add',

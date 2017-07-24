@@ -3,7 +3,7 @@
 
     app.factory('Series', function ($http) {
 
-        const BASE_URI = 'http://localhost:8080/series',
+        const BASE_URI = '/series',
               SLASH_BAR = '/',
               NOT_AVAILABLE = 'N/A',
               DEFAULT_POSTER = 'img/no-poster-available.jpg',
