@@ -1,4 +1,4 @@
-const app = angular.module('lab03-si1', ['ui.router', 'ngMaterial', 'ngAria', 'ngMessages']);
+const app = angular.module('lab04-si1', ['ui.router', 'ngMaterial', 'ngAria', 'ngMessages']);
 
 app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
     $stateProvider
