@@ -2,7 +2,7 @@
     'use strict';
 
     app.service('OMDaAPIService', function (Series, $http) {
-        const API_BASE_URL = "http://www.omdbapi.com/?apikey=93330d3c&type=series";
+        const API_BASE_URL = "https://www.omdbapi.com/?apikey=93330d3c&type=series";
         const ID_PARAM = "&i=";
         const TITLE_PARAM = "&s=";
 
